@@ -2,8 +2,9 @@ name: Flexible-joint project checks
 
 on:
   push:
-    branches: [main]
+    branches: [main, import/flexible-joint-experiments]
     paths:
+      - ".github/workflows/ci.yml"
       - "matlab/**"
       - "reports/**"
       - "scripts/**"
