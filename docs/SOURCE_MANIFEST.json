@@ -1,0 +1,265 @@
+{
+  "scope": "Flexible-joint control only: experiments 5, 6, 7, 8",
+  "excluded_source_archive": "Report 4.rar (ball-and-beam)",
+  "note": "Original copied payloads are byte-for-byte unchanged; some directory paths were renamed for clarity.",
+  "original_files": [
+    {
+      "path": "matlab/lag/Lag.slx",
+      "from_archive_path": "Report 6/Lag.slx",
+      "sha256": "c7f2f094e08551ef2417cd3da2fb03108b88c753276d68575682a1647773578b",
+      "bytes": 27161
+    },
+    {
+      "path": "matlab/lag/Matrix_Lag.m",
+      "from_archive_path": "Report 6/Matrix_Lag.m",
+      "sha256": "3db7290b464b6cf2f9a6d69531addf22e0827d5bdf5f21f01c81248d269d6d05",
+      "bytes": 606
+    },
+    {
+      "path": "matlab/lag/flexible with lag.fig",
+      "from_archive_path": "Report 6/flexible with lag.fig",
+      "sha256": "6b67743e5b4bdebf66935fb99561b9326e84d30f99f881b1b289ef3a4e05090c",
+      "bytes": 196032
+    },
+    {
+      "path": "matlab/lag/flexible_lag.mat",
+      "from_archive_path": "Report 6/flexible_lag.mat",
+      "sha256": "9c600a48fbb50e2130ca8d8d25d3f979059feb4f1fd5a1de2926b39383ef2a33",
+      "bytes": 160124
+    },
+    {
+      "path": "matlab/lead/Lead.slx",
+      "from_archive_path": "Report 5/Lead.slx",
+      "sha256": "546917db807e083b7526aadee1a955ea2fefa1679487dc02401cdea6e8c77bc0",
+      "bytes": 25196
+    },
+    {
+      "path": "matlab/lead/Matrix_Lead.m",
+      "from_archive_path": "Report 5/Matrix_Lead.m",
+      "sha256": "babd6425cb1e63d6da424028b8a88b97cda4c5360ff193234246f4df3ef06082",
+      "bytes": 604
+    },
+    {
+      "path": "matlab/lead_lag/Matrix_Lead.m",
+      "from_archive_path": "Report 7/Matrix_Lead.m",
+      "sha256": "1bb91481a9b9e22ca654e46d41a63a33c493798c6c9b056aee6be37d5c65079e",
+      "bytes": 819
+    },
+    {
+      "path": "matlab/lead_lag/data.mat",
+      "from_archive_path": "Report 7/data.mat",
+      "sha256": "7d8cf30deb9312234b47596287f19b1a149b5a5790b60d019e4b4f21fbcaf804",
+      "bytes": 156156
+    },
+    {
+      "path": "matlab/lead_lag/flexible joint response.fig",
+      "from_archive_path": "Report 7/flexible joint response.fig",
+      "sha256": "5001cea9ffa57ab8e8667b81e200f3a9cf2cd6014f42ab1266a166c24aa1a110",
+      "bytes": 192307
+    },
+    {
+      "path": "matlab/lead_lag/margin.fig",
+      "from_archive_path": "Report 7/margin.fig",
+      "sha256": "33c0ed2433718dcf1e34ded8a901c43a5efa373c184bd1e7ec5af9b112a8d817",
+      "bytes": 90042
+    },
+    {
+      "path": "matlab/lead_lag/step response.fig",
+      "from_archive_path": "Report 7/step response.fig",
+      "sha256": "237c83f8ef50b7831124778a07dc4cc38af45777a435d740355d02504490ec03",
+      "bytes": 78519
+    },
+    {
+      "path": "matlab/modeling/Equation_Solve.m",
+      "from_archive_path": "Report 5/Equation_Solve.m",
+      "sha256": "c3df71a276b8a0f9d14ac890d4338ca1c575dcdbd2e9b81223758f79b2e09e4a",
+      "bytes": 634
+    },
+    {
+      "path": "matlab/state_feedback/M8.m",
+      "from_archive_path": "Report 8/M8.m",
+      "sha256": "aca3918a810722bba315a34190ff0384f049818bcdac5b2c9a4146293218e62c",
+      "bytes": 360
+    },
+    {
+      "path": "matlab/state_feedback/simulin8.slx",
+      "from_archive_path": "Report 8/simulin8.slx",
+      "sha256": "8ee9fb724937d8a54bf72ce09c677c8a3c2e9a66161153c345473f528b7d2eff",
+      "bytes": 28457
+    },
+    {
+      "path": "reports/latex/report_05/1.jpg",
+      "from_archive_path": "Report 5/Latex/1.jpg",
+      "sha256": "02761593e9d3213a4fabe5bbcd6669d02d03340cbff65440d44554d023008847",
+      "bytes": 69128
+    },
+    {
+      "path": "reports/latex/report_05/2.jpg",
+      "from_archive_path": "Report 5/Latex/2.jpg",
+      "sha256": "dc6263163acd5912c01a432ecd3236b403e12247ceb53aceb935e9ebb9e94621",
+      "bytes": 63490
+    },
+    {
+      "path": "reports/latex/report_05/3.jpg",
+      "from_archive_path": "Report 5/Latex/3.jpg",
+      "sha256": "a687a942bc8f476e51a50093bef465e925df7dbb4c4ee5dda20421d70578bea1",
+      "bytes": 33080
+    },
+    {
+      "path": "reports/latex/report_05/4.jpg",
+      "from_archive_path": "Report 5/Latex/4.jpg",
+      "sha256": "fff270cb8d9644bede64372a62a1025e5d4b8bba041a81c9807b31f6bffeb16a",
+      "bytes": 34440
+    },
+    {
+      "path": "reports/latex/report_05/5.JPG",
+      "from_archive_path": "Report 5/Latex/5.JPG",
+      "sha256": "8e669cd62f70caf4911887d011fb6e4ea6bebf382aeb0a98f2ea539dbe0c0086",
+      "bytes": 86099
+    },
+    {
+      "path": "reports/latex/report_05/document.tex",
+      "from_archive_path": "Report 5/Latex/document.tex",
+      "sha256": "775878da35c7225f20278d45eb968b8524ca3dca084e4ee3e2b897c23ed57111",
+      "bytes": 5546
+    },
+    {
+      "path": "reports/latex/report_06/1.jpg",
+      "from_archive_path": "Report 6/Latex/1.jpg",
+      "sha256": "02761593e9d3213a4fabe5bbcd6669d02d03340cbff65440d44554d023008847",
+      "bytes": 69128
+    },
+    {
+      "path": "reports/latex/report_06/2.jpg",
+      "from_archive_path": "Report 6/Latex/2.jpg",
+      "sha256": "dc6263163acd5912c01a432ecd3236b403e12247ceb53aceb935e9ebb9e94621",
+      "bytes": 63490
+    },
+    {
+      "path": "reports/latex/report_06/3.jpg",
+      "from_archive_path": "Report 6/Latex/3.jpg",
+      "sha256": "a687a942bc8f476e51a50093bef465e925df7dbb4c4ee5dda20421d70578bea1",
+      "bytes": 33080
+    },
+    {
+      "path": "reports/latex/report_06/4.jpg",
+      "from_archive_path": "Report 6/Latex/4.jpg",
+      "sha256": "f5142c411f13b74bfe7b3277bd7cb4e808a7a88cc38b4434d67f18b21ed29a60",
+      "bytes": 37742
+    },
+    {
+      "path": "reports/latex/report_06/5.JPG",
+      "from_archive_path": "Report 6/Latex/5.JPG",
+      "sha256": "c24fec5e467a3eaa53e8fd4fe73de5a45b174a9fe665a04ff3b66fa5f96a5f8a",
+      "bytes": 44050
+    },
+    {
+      "path": "reports/latex/report_06/6.jpg",
+      "from_archive_path": "Report 6/Latex/6.jpg",
+      "sha256": "97d6245f5de27a844970dae641076aaecd7bf9a144429c66c7bb67743dfabf22",
+      "bytes": 80791
+    },
+    {
+      "path": "reports/latex/report_06/document.tex",
+      "from_archive_path": "Report 6/Latex/document.tex",
+      "sha256": "e7318a2538322dedb05dcfd8264e50d8d4d29db199918e53b1b254ad13d1725d",
+      "bytes": 5598
+    },
+    {
+      "path": "reports/latex/report_07/1.jpg",
+      "from_archive_path": "Report 7/Latex/1.jpg",
+      "sha256": "02761593e9d3213a4fabe5bbcd6669d02d03340cbff65440d44554d023008847",
+      "bytes": 69128
+    },
+    {
+      "path": "reports/latex/report_07/2.jpg",
+      "from_archive_path": "Report 7/Latex/2.jpg",
+      "sha256": "dc6263163acd5912c01a432ecd3236b403e12247ceb53aceb935e9ebb9e94621",
+      "bytes": 63490
+    },
+    {
+      "path": "reports/latex/report_07/3.jpg",
+      "from_archive_path": "Report 7/Latex/3.jpg",
+      "sha256": "1bc9fd2401bd38550375fffc6b49e0e0bd2c7aaf7935af12b0ed1f28582313a0",
+      "bytes": 85769
+    },
+    {
+      "path": "reports/latex/report_07/4.jpg",
+      "from_archive_path": "Report 7/Latex/4.jpg",
+      "sha256": "f978f90dcc840414c58120f6a6f924977f5f9e0bf3af114277c1aedcd54556cc",
+      "bytes": 55511
+    },
+    {
+      "path": "reports/latex/report_07/5.jpg",
+      "from_archive_path": "Report 7/Latex/5.jpg",
+      "sha256": "80b7c904897c96abdd4b0324689714394783314ad1edb74ccbf1d097858b2df7",
+      "bytes": 80801
+    },
+    {
+      "path": "reports/latex/report_07/document.tex",
+      "from_archive_path": "Report 7/Latex/document.tex",
+      "sha256": "6e8e90f7dd4d017e12acb7ade6a52cba997286e2f607a3cdef90d6063210ecbf",
+      "bytes": 5922
+    },
+    {
+      "path": "reports/latex/report_08/1.jpg",
+      "from_archive_path": "Report 8/Latex/1.jpg",
+      "sha256": "02761593e9d3213a4fabe5bbcd6669d02d03340cbff65440d44554d023008847",
+      "bytes": 69128
+    },
+    {
+      "path": "reports/latex/report_08/2.jpg",
+      "from_archive_path": "Report 8/Latex/2.jpg",
+      "sha256": "dc6263163acd5912c01a432ecd3236b403e12247ceb53aceb935e9ebb9e94621",
+      "bytes": 63490
+    },
+    {
+      "path": "reports/latex/report_08/3.jpg",
+      "from_archive_path": "Report 8/Latex/3.jpg",
+      "sha256": "1645fa9398f48ccd609630068484762aad9f6ba31b08087947fba1b786c5858d",
+      "bytes": 21518
+    },
+    {
+      "path": "reports/latex/report_08/4.jpg",
+      "from_archive_path": "Report 8/Latex/4.jpg",
+      "sha256": "9e66008eb66dfe80ede792ccf00ff9b74b63593ce0e4d9f87fac4d5a1dac5527",
+      "bytes": 27816
+    },
+    {
+      "path": "reports/latex/report_08/5.jpg",
+      "from_archive_path": "Report 8/Latex/5.jpg",
+      "sha256": "e306de51addfcfa300c6b99bc0601ebb82ff764585e29e9645718ebf72c5ba8e",
+      "bytes": 13314
+    },
+    {
+      "path": "reports/latex/report_08/document.tex",
+      "from_archive_path": "Report 8/Latex/document.tex",
+      "sha256": "aae165781539f01fde75416658abd56f4166a97c170b06736cc6d12859503438",
+      "bytes": 6089
+    },
+    {
+      "path": "reports/report_05_lead.pdf",
+      "from_archive_path": "Report 5/Report 5.pdf",
+      "sha256": "ff4e08dbc180cd21e4c28f1fbc91cfcca1155107754b7d97f5401a62c74982dd",
+      "bytes": 404617
+    },
+    {
+      "path": "reports/report_06_lag.pdf",
+      "from_archive_path": "Report 6/Report 6.pdf",
+      "sha256": "a016a55c1e788961fa8862896578c906aa0520d2339f39dfd8cfabfca7dc0379",
+      "bytes": 445611
+    },
+    {
+      "path": "reports/report_07_lead_lag.pdf",
+      "from_archive_path": "Report 7/Latex/document.pdf",
+      "sha256": "a45908f3de45c1a82ca621e619b3b8dba3d7e8de57e0916ed5cde90ef9f069f5",
+      "bytes": 468550
+    },
+    {
+      "path": "reports/report_08_state_feedback.pdf",
+      "from_archive_path": "Report 8/Report 8.pdf",
+      "sha256": "5c30764888cc63eed86b20fcd99a9b9b825f0f583590ff15f2bccc3450e661ae",
+      "bytes": 222330
+    }
+  ]
+}
