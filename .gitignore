@@ -1,0 +1,28 @@
+# MATLAB/Simulink transient output
+slprj/
+*.slxc
+*.asv
+*.autosave
+*.m~
+codegen/
+*_grt_rtw/
+*_ert_rtw/
+
+# LaTeX generated files
+*.aux
+*.log
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+
+# Python checks
+__pycache__/
+.pytest_cache/
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

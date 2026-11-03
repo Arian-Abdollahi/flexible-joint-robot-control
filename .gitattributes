@@ -1,0 +1,10 @@
+*.m -text
+*.tex -text
+*.md text eol=lf
+*.json text eol=lf
+*.slx binary
+*.mat binary
+*.fig binary
+*.pdf binary
+*.jpg binary
+*.JPG binary

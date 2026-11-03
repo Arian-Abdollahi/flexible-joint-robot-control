@@ -1,0 +1,103 @@
+name: Import verified flexible-joint archive
+
+on:
+  push:
+    branches:
+      - import/flexible-joint-experiments
+    paths:
+      - "*.zip"
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    name: Verify, unpack and commit project files
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out import branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Verify the original archive and extract files
+        run: |
+          python - <<'PY'
+          from hashlib import sha256
+          from pathlib import Path, PurePosixPath
+          from zipfile import ZipFile
+          import stat
+
+          EXPECTED_SHA256 = "9ebabe8e10d0222563009676fc1f18ff7a482535462f3fd67c89d80b8892fde8"
+          EXPECTED_PATHS = set([".gitattributes",".github/workflows/ci.yml",".gitignore","CREDITS.md","README.md","docs/EXPERIMENTS.md","docs/MODEL.md","docs/PROVENANCE.md","docs/REPRODUCIBILITY.md","docs/SOURCE_MANIFEST.json","matlab/lag/Lag.slx","matlab/lag/Matrix_Lag.m","matlab/lag/flexible with lag.fig","matlab/lag/flexible_lag.mat","matlab/lead/Lead.slx","matlab/lead/Matrix_Lead.m","matlab/lead_lag/Matrix_Lead.m","matlab/lead_lag/data.mat","matlab/lead_lag/flexible joint response.fig","matlab/lead_lag/margin.fig","matlab/lead_lag/step response.fig","matlab/modeling/Equation_Solve.m","matlab/state_feedback/M8.m","matlab/state_feedback/simulin8.slx","reports/latex/report_05/1.jpg","reports/latex/report_05/2.jpg","reports/latex/report_05/3.jpg","reports/latex/report_05/4.jpg","reports/latex/report_05/5.JPG","reports/latex/report_05/document.tex","reports/latex/report_06/1.jpg","reports/latex/report_06/2.jpg","reports/latex/report_06/3.jpg","reports/latex/report_06/4.jpg","reports/latex/report_06/5.JPG","reports/latex/report_06/6.jpg","reports/latex/report_06/document.tex","reports/latex/report_07/1.jpg","reports/latex/report_07/2.jpg","reports/latex/report_07/3.jpg","reports/latex/report_07/4.jpg","reports/latex/report_07/5.jpg","reports/latex/report_07/document.tex","reports/latex/report_08/1.jpg","reports/latex/report_08/2.jpg","reports/latex/report_08/3.jpg","reports/latex/report_08/4.jpg","reports/latex/report_08/5.jpg","reports/latex/report_08/document.tex","reports/report_05_lead.pdf","reports/report_06_lag.pdf","reports/report_07_lead_lag.pdf","reports/report_08_state_feedback.pdf","scripts/validate_project.py","tests/test_inventory.py"])
+          CI_FILE = ".github/workflows/ci.yml"
+          uploads = sorted(Path(".").glob("*.zip"))
+          if len(uploads) != 1:
+              raise SystemExit(f"Expected exactly one ZIP in the repository root: {uploads}")
+          archive_path = uploads[0]
+          if archive_path.stat().st_size > 6_000_000:
+              raise SystemExit("ZIP exceeds expected package size")
+          if sha256(archive_path.read_bytes()).hexdigest() != EXPECTED_SHA256:
+              raise SystemExit("Uploaded ZIP checksum does not match the prepared flexible-joint project")
+
+          with ZipFile(archive_path) as archive:
+              entries = [item for item in archive.infolist() if not item.is_dir()]
+              names = [item.filename for item in entries]
+              if len(names) != len(set(names)) or set(names) != EXPECTED_PATHS:
+                  raise SystemExit("Archive has missing, duplicate or unexpected file paths")
+              if sum(item.file_size for item in entries) > 16_000_000:
+                  raise SystemExit("Archive uncompressed payload exceeds the expected size")
+              for item in entries:
+                  path = PurePosixPath(item.filename)
+                  mode = (item.external_attr >> 16) & 0o170000
+                  if (path.is_absolute() or not path.parts or ".." in path.parts or
+                          "\\" in item.filename or mode not in (0, stat.S_IFREG)):
+                      raise SystemExit(f"Unsafe ZIP entry: {item.filename!r}")
+              broken = archive.testzip()
+              if broken:
+                  raise SystemExit(f"Corrupt ZIP member: {broken}")
+              for item in entries:
+                  path = Path(item.filename)
+                  if item.filename == CI_FILE:
+                      if not path.is_file():
+                          raise SystemExit("Expected the preinstalled CI workflow")
+                      print(f"Preserving preinstalled workflow: {path}")
+                      continue
+                  if path.exists() and item.filename != "README.md":
+                      raise SystemExit(f"Refusing to overwrite an existing file: {path}")
+                  path.parent.mkdir(parents=True, exist_ok=True)
+                  path.write_bytes(archive.read(item))
+          archive_path.unlink()
+          print("Verified 55 prepared files, excluding generated Python caches.")
+          PY
+
+      - name: Check models, PDF reports and manifest
+        run: |
+          python scripts/validate_project.py
+          python -m unittest discover -s tests -v
+
+      - name: Record successful import
+        run: |
+          cat > docs/IMPORT_STATUS.md <<'EOF'
+          # Import status
+
+          The prepared 55-file flexible-joint archive was imported after SHA-256 and path verification.
+          All 3 Simulink model archives and 4 report PDFs passed structural integrity checks.
+          All 6 repository tests passed during import.
+
+          These are structural checks, not newly run MATLAB/Simulink simulations.
+          Review the pull request before merging the materials into main.
+          EOF
+
+      - name: Commit imported assets to review branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No new files to commit"
+            exit 0
+          fi
+          git commit -m "import: add flexible-joint control experiments and reports"
+          git push origin HEAD:import/flexible-joint-experiments
